@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MongoDB</title>
+</head>
+
+<body>
+    <form id="myForm" method="post">
+        <label for="createCollectionInput">Collection Name:</label>
+        <input type="text" id="createCollectionInput" name="collectionName">
+
+        <br>
+        <br>
+
+        <label for="submit">Route:</label>
+        <input id="createCollection" type="submit" value="Create Collection" formaction="/createCollection">
+        <input id="getCollection" type="submit" value="Get Collection" formaction="/getCollection">
+        <input id="dropCollection" type="submit" value="Drop Collection" formaction="/dropCollection">
+
+        <br>
+        <br>
+        <br>
+        <br>
+
+        <label for="bookName">Book Name:</label>
+        <input id="bookName" type="text" name="bookName" placeholder="Book Name">
+        <br>
+
+        <label for="bookAuthorName">Author Name:</label>
+        <input id="bookAuthorName" type="text" name="bookAuthorName" placeholder="Author Name">
+        <br>
+
+        <label for="bookPageCount">Book Page Count:</label>
+        <input id="bookPageCount" type="text" name="bookPageCount" placeholder="Page Count">
+        <br>
+        <br>
+
+        <input id="createBookButton" type="submit" value="Add Data to Collection" formaction="/createBook">
+
+        <br>
+        <br>
+        <br>
+        <br>
+
+        <label for="findBookById">Book ID:</label>
+        <input id="findBookById" type="text" name="findBookId" placeholder="Book ID">
+
+        <input id="findBook" type="submit" value="Find Book" formaction="/findBookById">
+        <br>
+        <br>
+
+        <% if (locals.book) { %>
+            <h1>Book Name: <%= book.bookName %>
+            </h1>
+            <h1>Author Name: <%= book.authorName %>
+            </h1>
+            <h1>Page Count: <%= book.pageCount %>
+            </h1>
+            <% } %>
+
+                <br>
+                <br>
+                <br>
+                <br>
+
+                <input id="allBooks" type="submit" value="All Books" formaction="/getAllBooks">
+                <br>
+                <br>
+
+                <% if (locals.allBooks) { %>
+                    <% allBooks.forEach(book=> { %>
+                        <h1>Book Name: <%= book.bookName %>
+                        </h1>
+                        <h1>Author Name: <%= book.authorName %>
+                        </h1>
+                        <h1>Page Count: <%= book.pageCount %>
+                        </h1>
+                        <br>
+                        <br>
+                        <% }); %>
+                            <% } %>
+
+                <br>
+                <br>
+                <br>
+                <br>
+
+                <label for="deleteBook">Book ID:</label>
+                <input id="deleteBook" type="text" name="deleteBookId" placeholder="Book ID">
+
+                <input id="deleteBookButton" type="submit" value="Delete Book" formaction="/deleteBook">
+                <br>
+                <br>
+                <br>
+                <br>
+        
+                <h1>UPDATE BOOK</h1>
+                <label for="bookIdUpdate">Book Id:</label>
+                <input id="bookIdUpdate" type="text" name="updateBookId" placeholder="Book Name">
+                <br>
+                <label for="bookNameUpdate">Book Name:</label>
+                <input id="bookNameUpdate" type="text" name="updateBookName" placeholder="Book Name">
+                <br>
+        
+                <label for="bookAuthorNameUpdate">Author Name:</label>
+                <input id="bookAuthorNameUpdate" type="text" name="updateBookAuthorName" placeholder="Author Name">
+                <br>
+        
+                <label for="bookPageCountUpdate">Book Page Count:</label>
+                <input id="bookPageCountUpdate" type="text" name="updateBookPageCount" placeholder="Page Count">
+                <br>
+                <br>
+        
+                <input id="updateBookButton" type="submit" value="Update Book" formaction="/updateBook">
+        
+                <br>
+                <br>
+                <br>
+                <br>
+    </form>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AXIOS</title>
+</head>
+
+<body>
+    <form action="/" method="POST">
+        <select name="type">
+            <option value="education">education</option>
+            <option value="charity">charity</option>
+            <option value="relaxation">relaxation</option>
+            <option value="busywork">busywork</option>
+            <option value="social">social</option>
+            <option value="diy">diy</option>
+            <option value="music">music</option>
+            <option value="recreational">recreational</option>
+        </select>
+        <select name="participants">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+        </select>
+        <button type="submit">Go</button>
+    </form>
+    <section>
+        <% if (!locals.data) { %>
+            <h1> NO DATA </h1>
+            <% if (locals.error) { %>
+                <h1>
+                    <%= error %>
+                </h1>
+                <% } %>
+            <% } else { %>
+                <h2>
+                    <% data.activity %>
+                </h2>
+                <span>
+                    <% data.type %>
+                </span>
+                <span>
+                    Participants: <% data.participants %>
+                </span>
+                <% } %>
+
+    </section>
+</body>
+
+</html>

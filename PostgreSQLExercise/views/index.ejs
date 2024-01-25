@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookNotes</title>
+</head>
+
+<body>
+    <% if(locals.notes) {%>
+        <% locals.notes.forEach(note=> { %>
+            <h1>Book Name: <%= note.bookname %>
+            </h1>
+            <p>Note: <%= note.notecontent %>
+            </p>
+            <% });%>
+                    <% }else { %>
+                        <h1>NO NOTE</h1>
+                        <% }%>
+
+
+
+    <form action="/findbybook" method="post">
+        <input type="text" name="bookName" placeholder="Enter Book Name">
+        <button type="submit">Find</button>
+    </form>
+    
+
+    <form action="/createBook" method="post">
+        <input type="text" name="bookName" placeholder="Enter Book Name">
+        <input type="text" name="author" placeholder="Enter Author Name">
+        <input type="text" name="pageCount" placeholder="Enter Page Count">
+        <button type="submit">Create Book</button>
+    </form>
+    
+
+    <form action="/createNote" method="post">
+        <input type="text" name="bookId" placeholder="Enter Book Id">
+        <input type="text" name="content" placeholder="Enter Note">
+        <button type="submit">Create Note</button>
+    </form>
+    
+
+    <form action="/updateNote" method="post">
+        <input type="text" name="noteId" placeholder="Enter Note Id">
+        <input type="text" name="updatedContent" placeholder="Enter New Note">
+        <button type="submit">Update Note</button>
+    </form>
+    
+
+    <form action="/deleteNote" method="post">
+        <input type="text" name="noteId" placeholder="Enter Note Id">
+        <button type="submit">Delete Note</button>
+    </form>
+</body>
+
+</html>
