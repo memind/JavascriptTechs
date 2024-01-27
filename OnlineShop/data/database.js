@@ -1,4 +1,4 @@
-const mongodb = require('mongodb');
+const mongodb = require('mongodb');  
 const mongoClient = mongodb.MongoClient; 
 
 let db;
@@ -17,5 +17,5 @@ function getDb() {
 
 module.exports = {
     connectToDatabase: connectToDatabase,
-    db: getDb
+    getDb: getDb
 };
