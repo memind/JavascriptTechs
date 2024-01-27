@@ -1,0 +1,29 @@
+{
+  "canisters": {
+    "MeminKeep_backend": {
+      "main": "src/MeminKeep_backend/main.mo",
+      "type": "motoko"
+    },
+    "MeminKeep_frontend": {
+      "dependencies": [
+        "MeminKeep_backend"
+      ],
+      "frontend": {
+        "entrypoint": "src/MeminKeep_frontend/src/index.html"
+      },
+      "source": [
+        "src/MeminKeep_frontend/assets",
+        "dist/MeminKeep_frontend/"
+      ],
+      "type": "assets"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "output_env_file": ".env",
+  "version": 1
+}

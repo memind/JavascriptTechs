@@ -1,0 +1,35 @@
+{
+  "canisters": {
+    "MeminBank": {
+      "main": "src/MeminBank/main.mo",
+      "type": "motoko"
+    },
+    "MeminBank_assets": {
+      "dependencies": [
+        "MeminBank"
+      ],
+      "frontend": {
+        "entrypoint": "src/MeminBank_assets/src/index.html"
+      },
+      "source": [
+        "src/MeminBank_assets/assets",
+        "dist/MeminBank_assets/"
+      ],
+      "type": "assets"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "dfx": "0.15.3",
+  "networks": {
+    "local": {
+      "bind": "127.0.0.1:8000",
+      "type": "ephemeral"
+    }
+  },
+  "version": 1
+}
