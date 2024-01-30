@@ -39,4 +39,3 @@ const StyledHeader = styled.header`
     font-weight: bolder;
     font-size: 1.05rem;
   }
-`;
