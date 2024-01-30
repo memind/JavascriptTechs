@@ -4,7 +4,7 @@ import logo from './../assets/logo.png'
 
 export default function Login() {
     const handleClick = () => {
-        const clientId = 'b9220fff7bf74d9ea562bcd81ff760a9';
+        const clientId = '';
         const redirectUrl = 'http://localhost:3000';
         const apiUrl = 'https://accounts.spotify.com/authorize';
         const scope = [
