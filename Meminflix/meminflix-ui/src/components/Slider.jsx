@@ -25,5 +25,4 @@ export default function Slider({ movies }) {
     </Container>
   );
 }
-
 const Container = styled.div``;

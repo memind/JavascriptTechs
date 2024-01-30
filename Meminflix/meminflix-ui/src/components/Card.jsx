@@ -184,4 +184,3 @@ const Container = styled.div`
       }
     }
   }
-`;

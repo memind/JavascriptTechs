@@ -39,4 +39,3 @@ const Container = styled.div`
       object-fit: cover;
     }
   }
-`;

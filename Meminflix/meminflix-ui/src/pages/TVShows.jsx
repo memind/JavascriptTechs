@@ -71,5 +71,4 @@ const Container = styled.div`
     }
   }
 `;
-
 export default TVShows;
